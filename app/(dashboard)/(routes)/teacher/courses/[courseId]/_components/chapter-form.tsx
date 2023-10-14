@@ -65,6 +65,10 @@ export default function ChapterForm({
     }
   };
 
+  const onEdit = (id: string) => {
+    router.push(`/teacher/courses/${courseId}/chapters/${id}`);
+  };
+
   const onReorder = async (updateData: { id: string; position: number }[]) => {
     try {
       setIsUpdating(true);
@@ -140,7 +144,7 @@ export default function ChapterForm({
         >
           {!initialData.chapters.length && "No chapters"}
           <ChaptersList
-            onEdit={() => {}}
+            onEdit={onEdit}
             onReorder={onReorder}
             items={initialData.chapters}
           />
