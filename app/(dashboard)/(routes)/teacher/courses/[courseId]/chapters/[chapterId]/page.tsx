@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 import { classNames } from "uploadthing/client";
 import ChapterTitleForm from "./_components/chapter-title-form";
+import ChapterDescriptionForm from "./_components/chapter-description-form";
 
 export default async function ChapterPage({
   params,
@@ -68,6 +69,11 @@ export default async function ChapterPage({
               <h2>Customize your chapter</h2>
             </div>
             <ChapterTitleForm
+              initialData={chapter}
+              courseId={params.courseId}
+              chapterId={params.chapterId}
+            />
+            <ChapterDescriptionForm
               initialData={chapter}
               courseId={params.courseId}
               chapterId={params.chapterId}
